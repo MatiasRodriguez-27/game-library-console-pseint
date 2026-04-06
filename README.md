@@ -14,9 +14,19 @@ Collection of interactive console-based games developed using C and PSeInt, focu
 
 ## 🛠️ Technologies
 
-* C
 * PSeInt
 
 ## 🎯 Purpose
 
 This project was created to strengthen problem-solving skills and core programming concepts such as control flow, algorithms, and structured programming.
+
+## ▶️ How to Run
+
+1. Open the project in PSeInt or a C compiler
+2. Select the desired program/game
+3. Run the file and follow the console instructions
+
+## 👤 Author
+
+Matías Rodríguez  
+Software Development Student
