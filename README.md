@@ -1,8 +1,8 @@
 # game-library-console-pseint
-Collection of console-based games focused on logic, control structures, and algorithm design using C and PSeInt.
-# 🎮 Game Library (C & PSeInt)
+Collection of console-based games focused on logic, control structures, and algorithm design using PSeInt.
+# 🎮 Game Library (PSeInt)
 
-Collection of interactive console-based games developed using C and PSeInt, focused on practicing programming fundamentals and logical thinking.
+Collection of interactive console-based games developed using PSeInt, focused on practicing programming fundamentals and logical thinking.
 
 ## 🚀 Features
 
@@ -22,7 +22,7 @@ This project was created to strengthen problem-solving skills and core programmi
 
 ## ▶️ How to Run
 
-1. Open the project in PSeInt or a C compiler
+1. Open the project in PSeInt compiler
 2. Select the desired program/game
 3. Run the file and follow the console instructions
 
