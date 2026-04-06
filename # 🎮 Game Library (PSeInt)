@@ -2432,7 +2432,7 @@ Fin Funcion
 //---------------------------------------------------------------------------------
 
 Funcion VerificarCapturaRojas(mat Por Referencia, vectorCaptura Por Referencia)
-    Dimension vectorAux[100, 3]  // Para almacenar múltiples opciones de captura
+    Dimension vectorAux[100, 3]  // Para almacenar mÃºltiples opciones de captura
     Definir fila, columna, numCapturas, opcion Como Entero
     numCapturas <- 0
 	
@@ -2444,7 +2444,7 @@ Funcion VerificarCapturaRojas(mat Por Referencia, vectorCaptura Por Referencia)
                     // Se puede capturar
                     Escribir "La pieza Roja puede capturar a la Negra"
                     vectorAux[numCapturas, 0] <- 1
-                    vectorAux[numCapturas, 1] <- fila + 1  // más 1 para que quede igual que las otras filas y columnas de las funciones Movimiento
+                    vectorAux[numCapturas, 1] <- fila + 1  // mÃ¡s 1 para que quede igual que las otras filas y columnas de las funciones Movimiento
                     vectorAux[numCapturas, 2] <- columna + 1
                     numCapturas <- numCapturas + 1
                 FinSi
@@ -2482,14 +2482,14 @@ Funcion VerificarCapturaRojas(mat Por Referencia, vectorCaptura Por Referencia)
     Fin Para
 	
     Si numCapturas > 1 Entonces
-        // Pedir al usuario que elija cuál captura desea usar
-        Escribir "Hay múltiples opciones de captura. Elija una:"
+        // Pedir al usuario que elija cuÃ¡l captura desea usar
+        Escribir "Hay mÃºltiples opciones de captura. Elija una:"
         Para opcion <- 1 Hasta numCapturas Con Paso 1 Hacer
             Escribir opcion, ". Pieza en (", vectorAux[opcion-1, 1], ", ", vectorAux[opcion-1, 2], ")"
         FinPara
 		
         Repetir
-            Escribir "Ingrese el número de su opción: "
+            Escribir "Ingrese el nÃºmero de su opciÃ³n: "
             Leer opcion
         Hasta Que opcion >= 1 Y opcion <= numCapturas
 		
@@ -2511,7 +2511,7 @@ Fin Funcion
 //---------------------------------------------------------------------------------
 
 Funcion VerificarCapturaNegras(mat Por Referencia, vectorCaptura Por Referencia)
-    Dimension vectorAux[100, 3]  // Para almacenar múltiples opciones de captura
+    Dimension vectorAux[100, 3]  // Para almacenar mÃºltiples opciones de captura
     Definir fila, columna, numCapturas, opcion Como Entero
     numCapturas <- 0
 	
@@ -2555,14 +2555,14 @@ Funcion VerificarCapturaNegras(mat Por Referencia, vectorCaptura Por Referencia)
     Fin Para
 	
     Si numCapturas > 1 Entonces
-        // Pedir al usuario que elija cuál captura desea usar
-        Escribir "Hay múltiples opciones de captura. Elija una:"
+        // Pedir al usuario que elija cuÃ¡l captura desea usar
+        Escribir "Hay mÃºltiples opciones de captura. Elija una:"
         Para opcion <- 1 Hasta numCapturas Con Paso 1 Hacer
             Escribir opcion, ". Pieza en (", vectorAux[opcion-1, 1], ", ", vectorAux[opcion-1, 2], ")"
         FinPara
 		
         Repetir
-            Escribir "Ingrese el número de su opción: "
+            Escribir "Ingrese el nÃºmero de su opciÃ³n: "
             Leer opcion
         Hasta Que opcion >= 1 Y opcion <= numCapturas
 		
@@ -2598,11 +2598,11 @@ Funcion MovimientoR (mat Por Referencia)
 	si vectorCaptura[0] == 1 Entonces
 		fila = vectorCaptura[1]
 		columna = vectorCaptura[2]
-		escribir "Pieza Roja (", fila, ";", columna, ") está obligada a comer"
+		escribir "Pieza Roja (", fila, ";", columna, ") estÃ¡ obligada a comer"
 		
 		si mat[fila-1, columna-1] == "R" Entonces
 			repetir
-				Escribir "¿Dónde desea mover la pieza? (primero fila, luego columna): "
+				Escribir "Â¿DÃ³nde desea mover la pieza? (primero fila, luego columna): "
 				esEntero = 0
 				Mientras(esEntero == 0) Hacer
 					leer auxChar
@@ -2610,7 +2610,7 @@ Funcion MovimientoR (mat Por Referencia)
 					Si (esEntero == 1) Entonces
 						filaN = ConvertirANumero(auxChar)
 					SiNo
-						Escribir "ERROR: el valor ingresado para fila no es un número entero"
+						Escribir "ERROR: el valor ingresado para fila no es un nÃºmero entero"
 					FinSi
 				FinMientras
 				
@@ -2621,7 +2621,7 @@ Funcion MovimientoR (mat Por Referencia)
 					Si (esEntero == 1) Entonces
 						columnaN = ConvertirANumero(auxChar)
 					SiNo
-						Escribir "ERROR: el valor ingresado para columna no es un número entero"
+						Escribir "ERROR: el valor ingresado para columna no es un nÃºmero entero"
 					FinSi
 				FinMientras
 				
@@ -2637,7 +2637,7 @@ Funcion MovimientoR (mat Por Referencia)
 					mat[capturarY-1, capturarX-1] = " "
 					Escribir "Pieza capturada"
 					
-					// Actualizar posición de la pieza movida
+					// Actualizar posiciÃ³n de la pieza movida
 					SI (mat[fila - 1, columna - 1] == "R") Entonces
 						mat[filaN-1, columnaN-1] = "R"
 					SiNo
@@ -2660,13 +2660,13 @@ Funcion MovimientoR (mat Por Referencia)
 					FinPara
 					
 					Si (dobleSaltoDisponible) Entonces
-						Escribir "Doble salto disponible. ¿Desea capturar otra pieza? (si/no): "
+						Escribir "Doble salto disponible. Â¿Desea capturar otra pieza? (si/no): "
 						leer respuesta
 						Si (respuesta == "si") Entonces
 							fila = filaN
 							columna = columnaN
 							repetir
-								Escribir "¿Dónde desea mover la pieza? (primero fila, luego columna): "
+								Escribir "Â¿DÃ³nde desea mover la pieza? (primero fila, luego columna): "
 								esEntero = 0
 								Mientras(esEntero == 0) Hacer
 									leer auxChar
@@ -2674,7 +2674,7 @@ Funcion MovimientoR (mat Por Referencia)
 									Si (esEntero == 1) Entonces
 										filaN = ConvertirANumero(auxChar)
 									SiNo
-										Escribir "ERROR: el valor ingresado para fila no es un número entero"
+										Escribir "ERROR: el valor ingresado para fila no es un nÃºmero entero"
 									FinSi
 								FinMientras
 								
@@ -2685,7 +2685,7 @@ Funcion MovimientoR (mat Por Referencia)
 									Si (esEntero == 1) Entonces
 										columnaN = ConvertirANumero(auxChar)
 									SiNo
-										Escribir "ERROR: el valor ingresado para columna no es un número entero"
+										Escribir "ERROR: el valor ingresado para columna no es un nÃºmero entero"
 									FinSi
 								FinMientras
 								
@@ -2701,7 +2701,7 @@ Funcion MovimientoR (mat Por Referencia)
 									mat[capturarY-1, capturarX-1] = " "
 									Escribir "Pieza capturada"
 									
-									// Actualizar posición de la pieza movida
+									// Actualizar posiciÃ³n de la pieza movida
 									SI (mat[fila - 1, columna - 1] == "R") Entonces
 										mat[filaN-1, columnaN-1] = "R"
 									SiNo
@@ -2718,7 +2718,7 @@ Funcion MovimientoR (mat Por Referencia)
 		SiNo
 			si mat[fila-1,columna-1] == "r" Entonces
 				repetir
-					Escribir "¿Dónde desea mover la pieza? (primero fila, luego columna): "
+					Escribir "Â¿DÃ³nde desea mover la pieza? (primero fila, luego columna): "
 					esEntero = 0
 					Mientras(esEntero == 0) Hacer
 						leer auxChar
@@ -2726,7 +2726,7 @@ Funcion MovimientoR (mat Por Referencia)
 						Si (esEntero == 1) Entonces
 							filaN = ConvertirANumero(auxChar)
 						SiNo
-							Escribir "ERROR: el valor ingresado para fila no es un número entero"
+							Escribir "ERROR: el valor ingresado para fila no es un nÃºmero entero"
 						FinSi
 					FinMientras
 					
@@ -2737,7 +2737,7 @@ Funcion MovimientoR (mat Por Referencia)
 						Si (esEntero == 1) Entonces
 							columnaN = ConvertirANumero(auxChar)
 						SiNo
-							Escribir "ERROR: el valor ingresado para columna no es un número entero"
+							Escribir "ERROR: el valor ingresado para columna no es un nÃºmero entero"
 						FinSi
 					FinMientras
 					
@@ -2753,7 +2753,7 @@ Funcion MovimientoR (mat Por Referencia)
 						mat[capturarY-1, capturarX-1] = " "
 						Escribir "Pieza capturada"
 						
-						// Actualizar posición de la pieza movida
+						// Actualizar posiciÃ³n de la pieza movida
 						SI (mat[fila-1, columna-1] == "R") Entonces
 							mat[filaN-1, columnaN-1] = "R"
 						SiNo
@@ -2776,13 +2776,13 @@ Funcion MovimientoR (mat Por Referencia)
 						FinPara
 						
 						Si (dobleSaltoDisponible) Entonces
-							Escribir "Doble salto disponible. ¿Desea capturar otra pieza? (si/no): "
+							Escribir "Doble salto disponible. Â¿Desea capturar otra pieza? (si/no): "
 							leer respuesta
 							Si (respuesta == "si") Entonces
 								fila = filaN
 								columna = columnaN
 								repetir
-									Escribir "¿Dónde desea mover la pieza? (primero fila, luego columna): "
+									Escribir "Â¿DÃ³nde desea mover la pieza? (primero fila, luego columna): "
 									esEntero = 0
 									Mientras(esEntero == 0) Hacer
 										leer auxChar
@@ -2790,7 +2790,7 @@ Funcion MovimientoR (mat Por Referencia)
 										Si (esEntero == 1) Entonces
 											filaN = ConvertirANumero(auxChar)
 										SiNo
-											Escribir "ERROR: el valor ingresado para fila no es un número entero"
+											Escribir "ERROR: el valor ingresado para fila no es un nÃºmero entero"
 										FinSi
 									FinMientras
 									
@@ -2801,7 +2801,7 @@ Funcion MovimientoR (mat Por Referencia)
 										Si (esEntero == 1) Entonces
 											columnaN = ConvertirANumero(auxChar)
 										SiNo
-											Escribir "ERROR: el valor ingresado para columna no es un número entero"
+											Escribir "ERROR: el valor ingresado para columna no es un nÃºmero entero"
 										FinSi
 									FinMientras
 									
@@ -2817,7 +2817,7 @@ Funcion MovimientoR (mat Por Referencia)
 										mat[capturarY-1, capturarX-1] = " "
 										Escribir "Pieza capturada"
 										
-										// Actualizar posición de la pieza movida
+										// Actualizar posiciÃ³n de la pieza movida
 										SI (mat[fila-1, columna-1] == "R") Entonces
 											mat[filaN-1, columnaN-1] = "R"
 										SiNo
@@ -2837,7 +2837,7 @@ Funcion MovimientoR (mat Por Referencia)
 	SiNo
 		repetir
 			repetir
-				Escribir "Seleccione la posición de la pieza que desea mover (primero fila, luego columna): "
+				Escribir "Seleccione la posiciÃ³n de la pieza que desea mover (primero fila, luego columna): "
 				esEntero = 0;
 				Mientras(esEntero==0) Hacer
 					leer auxChar
@@ -2878,7 +2878,7 @@ Funcion MovimientoR (mat Por Referencia)
 		
 		si mat[fila-1, columna-1] == "R" Entonces
 			repetir
-				Escribir "¿Dónde desea mover la pieza? (primero fila, luego columna): "
+				Escribir "Â¿DÃ³nde desea mover la pieza? (primero fila, luego columna): "
 				esEntero = 0;
 				Mientras(esEntero==0) Hacer
 					leer auxChar
@@ -2917,7 +2917,7 @@ Funcion MovimientoR (mat Por Referencia)
 		siNo 
 			si mat[fila-1,columna-1] == "r" Entonces
 				Repetir
-					Escribir "¿Dónde desea mover la pieza? (primero fila, luego columna): "
+					Escribir "Â¿DÃ³nde desea mover la pieza? (primero fila, luego columna): "
 					esEntero = 0;
 					Mientras(esEntero==0) Hacer
 						leer auxChar
@@ -2982,11 +2982,11 @@ Funcion MovimientoN (mat Por Referencia)
 	si vectorCaptura[0] == 1 Entonces
 		fila = vectorCaptura[1]
 		columna = vectorCaptura[2]
-		escribir "Pieza Negra (", fila, ";", columna, ") está obligada a comer"
+		escribir "Pieza Negra (", fila, ";", columna, ") estÃ¡ obligada a comer"
 		
 		si mat[fila-1, columna-1] == "N" Entonces
 			repetir
-				Escribir "¿Dónde desea mover la pieza? (primero fila, luego columna): "
+				Escribir "Â¿DÃ³nde desea mover la pieza? (primero fila, luego columna): "
 				esEntero = 0;
 				Mientras(esEntero == 0) Hacer
 					leer auxChar
@@ -2994,7 +2994,7 @@ Funcion MovimientoN (mat Por Referencia)
 					Si (esEntero == 1) Entonces
 						filaN = ConvertirANumero(auxChar);
 					SiNo
-						Escribir "ERROR: el valor ingresado para fila no es un número entero";
+						Escribir "ERROR: el valor ingresado para fila no es un nÃºmero entero";
 					FinSi
 				FinMientras
 				
@@ -3005,7 +3005,7 @@ Funcion MovimientoN (mat Por Referencia)
 					Si (esEntero == 1) Entonces
 						columnaN = ConvertirANumero(auxChar);
 					SiNo
-						Escribir "ERROR: el valor ingresado para columna no es un número entero";
+						Escribir "ERROR: el valor ingresado para columna no es un nÃºmero entero";
 					FinSi
 				FinMientras
 				
@@ -3021,7 +3021,7 @@ Funcion MovimientoN (mat Por Referencia)
 					Escribir "Pieza capturada"
 				FinSi
 				
-				// Actualizar posición de la pieza movida
+				// Actualizar posiciÃ³n de la pieza movida
 				SI (mat[fila-1, columna-1] == "N") Entonces
 					mat[filaN-1, columnaN-1] = "N"
 				SiNo
@@ -3044,13 +3044,13 @@ Funcion MovimientoN (mat Por Referencia)
 				FinPara
 				
 				Si (dobleSaltoDisponible) Entonces
-					Escribir "Doble salto disponible. ¿Desea capturar otra pieza? (si/no): "
+					Escribir "Doble salto disponible. Â¿Desea capturar otra pieza? (si/no): "
 					leer respuesta
 					Si (respuesta == "si") Entonces
 						fila = filaN
 						columna = columnaN
 						repetir
-							Escribir "¿Dónde desea mover la pieza? (primero fila, luego columna): "
+							Escribir "Â¿DÃ³nde desea mover la pieza? (primero fila, luego columna): "
 							esEntero = 0;
 							Mientras(esEntero == 0) Hacer
 								leer auxChar
@@ -3058,7 +3058,7 @@ Funcion MovimientoN (mat Por Referencia)
 								Si (esEntero == 1) Entonces
 									filaN = ConvertirANumero(auxChar);
 								SiNo
-									Escribir "ERROR: el valor ingresado para fila no es un número entero";
+									Escribir "ERROR: el valor ingresado para fila no es un nÃºmero entero";
 								FinSi
 							FinMientras
 							
@@ -3069,7 +3069,7 @@ Funcion MovimientoN (mat Por Referencia)
 								Si (esEntero == 1) Entonces
 									columnaN = ConvertirANumero(auxChar);
 								SiNo
-									Escribir "ERROR: el valor ingresado para columna no es un número entero";
+									Escribir "ERROR: el valor ingresado para columna no es un nÃºmero entero";
 								FinSi
 							FinMientras
 							
@@ -3085,7 +3085,7 @@ Funcion MovimientoN (mat Por Referencia)
 								Escribir "Pieza capturada"
 							FinSi
 							
-							// Actualizar posición de la pieza movida
+							// Actualizar posiciÃ³n de la pieza movida
 							SI (mat[fila-1, columna-1] == "N") Entonces
 								mat[filaN-1, columnaN-1] = "N"
 							SiNo
@@ -3100,7 +3100,7 @@ Funcion MovimientoN (mat Por Referencia)
 		SiNo
 			si mat[fila-1,columna-1] == "n" Entonces
 				repetir
-					Escribir "¿Dónde desea mover la pieza? (primero fila, luego columna): "
+					Escribir "Â¿DÃ³nde desea mover la pieza? (primero fila, luego columna): "
 					esEntero = 0;
 					Mientras(esEntero==0) Hacer
 						leer auxChar
@@ -3108,7 +3108,7 @@ Funcion MovimientoN (mat Por Referencia)
 						Si(esEntero==1) Entonces
 							filaN = ConvertirANumero(auxChar);
 						SiNo
-							Escribir "ERROR: el valor ingresado para fila no es un número entero";
+							Escribir "ERROR: el valor ingresado para fila no es un nÃºmero entero";
 						FinSi
 					FinMientras
 					
@@ -3119,7 +3119,7 @@ Funcion MovimientoN (mat Por Referencia)
 						Si(esEntero==1) Entonces
 							columnaN = ConvertirANumero(auxChar);
 						SiNo
-							Escribir "ERROR: el valor ingresado para columna no es un número entero";
+							Escribir "ERROR: el valor ingresado para columna no es un nÃºmero entero";
 						FinSi
 					FinMientras
 					
@@ -3161,13 +3161,13 @@ Funcion MovimientoN (mat Por Referencia)
 					FinPara
 					
 					Si (dobleSaltoDisponible) Entonces
-						Escribir "Doble salto disponible. ¿Desea capturar otra pieza? (si/no): "
+						Escribir "Doble salto disponible. Â¿Desea capturar otra pieza? (si/no): "
 						leer respuesta
 						Si (respuesta == "si") Entonces
 							fila = filaN
 							columna = columnaN
 							repetir
-								Escribir "¿Dónde desea mover la pieza? (primero fila, luego columna): "
+								Escribir "Â¿DÃ³nde desea mover la pieza? (primero fila, luego columna): "
 								esEntero = 0;
 								Mientras(esEntero==0) Hacer
 									leer auxChar
@@ -3175,7 +3175,7 @@ Funcion MovimientoN (mat Por Referencia)
 									Si(esEntero==1) Entonces
 										filaN = ConvertirANumero(auxChar);
 									SiNo
-										Escribir "ERROR: el valor ingresado para fila no es un número entero";
+										Escribir "ERROR: el valor ingresado para fila no es un nÃºmero entero";
 									FinSi
 								FinMientras
 								
@@ -3186,7 +3186,7 @@ Funcion MovimientoN (mat Por Referencia)
 									Si(esEntero==1) Entonces
 										columnaN = ConvertirANumero(auxChar);
 									SiNo
-										Escribir "ERROR: el valor ingresado para columna no es un número entero";
+										Escribir "ERROR: el valor ingresado para columna no es un nÃºmero entero";
 									FinSi
 								FinMientras
 								
@@ -3223,7 +3223,7 @@ Funcion MovimientoN (mat Por Referencia)
 	SiNo
 		repetir
 			repetir
-				Escribir ("Seleccione la posición de la pieza que desea mover (primero fila, luego columna): ")
+				Escribir ("Seleccione la posiciÃ³n de la pieza que desea mover (primero fila, luego columna): ")
 				esEntero = 0;
 				Mientras(esEntero==0) Hacer
 					leer auxChar
@@ -3265,7 +3265,7 @@ Funcion MovimientoN (mat Por Referencia)
 		
 		si mat[fila-1, columna-1] == "N" Entonces
 			repetir
-				Escribir "¿Dónde desea mover la pieza? (primero fila, luego columna): "
+				Escribir "Â¿DÃ³nde desea mover la pieza? (primero fila, luego columna): "
 				esEntero = 0;
 				Mientras(esEntero==0) Hacer
 					leer auxChar
@@ -3304,7 +3304,7 @@ Funcion MovimientoN (mat Por Referencia)
 		siNo 
 			si mat[fila-1,columna-1] == "n" Entonces
 				Repetir
-					Escribir "¿Dónde desea mover la pieza? (primero fila, luego columna): "
+					Escribir "Â¿DÃ³nde desea mover la pieza? (primero fila, luego columna): "
 					esEntero = 0;
 					Mientras(esEntero==0) Hacer
 						leer auxChar
@@ -3357,7 +3357,7 @@ FinFuncion
 //---------------------------------------------------------------------------------
 
 
-Función Finjuego <- VerificarFinJuego(mat Por Referencia,Finjuego por valor,turnoColor por valor)
+FunciÃ³n Finjuego <- VerificarFinJuego(mat Por Referencia,Finjuego por valor,turnoColor por valor)
 Definir contarRojas, contarNegras, puedenMoverRojas, puedenMoverNegras Como Entero
 contarRojas <- 0
 contarNegras <- 0
@@ -3384,7 +3384,7 @@ SiNo
 			Para fila <- 0 Hasta 7 Con Paso 1 Hacer
 				Para columna <- 0 Hasta 7 Con Paso 1 Hacer
 					Si mat[fila,columna] == 'R' Entonces
-						// Verificar si hay un movimiento válido para Rojas
+						// Verificar si hay un movimiento vÃ¡lido para Rojas
 						Si (fila-2 >= 0 y columna-2 >= 0 y (mat[fila-1, columna-1] == 'N' O mat[fila-1, columna-1] == 'n') y mat[fila-2, columna-2] == ' ') o (fila-2 >= 0 y columna+2 <= 7 y (mat[fila-1, columna+1] = 'N' O mat[fila-1, columna+1] == 'n') y mat[fila-2, columna+2] == ' ') o (fila-1>=0 y columna-1>=0 y mat[fila-1,columna-1]==" ") o (fila-1>=0 y columna+1<=7 y mat[fila-1,columna+1]==" ") Entonces
 							puedenMoverRojas <- 1
 						FinSi
@@ -3394,7 +3394,7 @@ SiNo
 			Para fila <- 0 Hasta 7 Con Paso 1 Hacer
 				Para columna <- 0 Hasta 7 Con Paso 1 Hacer
 					Si mat[fila,columna] == 'r' Entonces
-						// Verificar si hay un movimiento válido para Rojas
+						// Verificar si hay un movimiento vÃ¡lido para Rojas
 						Si (fila-2 >= 0 y columna-2 >= 0 y (mat[fila-1, columna-1] == 'N' O mat[fila-1, columna-1] == 'n') y mat[fila-2, columna-2] == ' ') o (fila-2 >= 0 y columna+2 <= 7 y (mat[fila-1, columna+1] = 'N' O mat[fila-1, columna+1] == 'n') y mat[fila-2, columna+2] == ' ') o (fila-1>=0 y columna-1>=0 y mat[fila-1,columna-1]==" ") o (fila-1>=0 y columna+1<=7 y mat[fila-1,columna+1]==" ")o (fila+2 <= 7 y columna-2 >= 0 y (mat[fila+1, columna-1] == 'N' O mat[fila+1, columna-1] == 'n') y mat[fila+2, columna-2] == ' ') o (fila+2 <= 7 y columna+2 <= 7 y (mat[fila+1, columna+1] = 'N' O mat[fila+1, columna+1] == 'n') y mat[fila+2, columna+2] == ' ') o (fila+1<=7 y columna-1>=0 y mat[fila+1,columna-1]==" ") o (fila+1<=7 y columna+1<=7 y mat[fila+1,columna+1]==" ") Entonces
 							puedenMoverRojas <- 1
 						FinSi
@@ -3410,7 +3410,7 @@ SiNo
 			Para fila <- 0 Hasta 7 Con Paso 1 Hacer
 				Para columna <- 0 Hasta 7 Con Paso 1 Hacer
 					Si mat[fila,columna] == 'N' Entonces
-						// Verificar si hay un movimiento válido para Negras
+						// Verificar si hay un movimiento vÃ¡lido para Negras
 						Si (fila+2 <= 7 y columna-2 >= 0 y (mat[fila+1, columna-1] == 'R' O mat[fila+1, columna-1] == 'r') y mat[fila+2, columna-2] == ' ') o (fila+2 <= 7 y columna+2 <= 7 y (mat[fila+1, columna+1] = 'R' O mat[fila+1, columna+1] == 'r') y mat[fila+2, columna+2] == ' ') o (fila+1<=7 y columna-1>=0 y mat[fila+1,columna-1]==" ") o (fila+1<=7 y columna+1<=7 y mat[fila+1,columna+1]==" ") Entonces
 							puedenMoverNegras <- 1
 						FinSi
@@ -3421,7 +3421,7 @@ SiNo
 			Para fila <- 0 Hasta 7 Con Paso 1 Hacer
 				Para columna <- 0 Hasta 7 Con Paso 1 Hacer
 					Si mat[fila,columna] == 'n' Entonces
-						// Verificar si hay un movimiento válido para Negras
+						// Verificar si hay un movimiento vÃ¡lido para Negras
 						Si (fila-2 >= 0 y columna-2 >= 0 y (mat[fila-1, columna-1] == 'R' O mat[fila-1, columna-1] == 'r') y mat[fila-2, columna-2] == ' ') o (fila-2 >= 0 y columna+2 <= 7 y (mat[fila-1, columna+1] = 'R' O mat[fila-1, columna+1] == 'r') y mat[fila-2, columna+2] == ' ') o (fila-1>=0 y columna-1>=0 y mat[fila-1,columna-1]==" ") o (fila-1>=0 y columna+1<=7 y mat[fila-1,columna+1]==" ")o (fila+2 <= 7 y columna-2 >= 0 y (mat[fila+1, columna-1] == 'R' O mat[fila+1, columna-1] == 'r') y mat[fila+2, columna-2] == ' ') o (fila+2 <= 7 y columna+2 <= 7 y (mat[fila+1, columna+1] = 'R' O mat[fila+1, columna+1] == 'r') y mat[fila+2, columna+2] == ' ') o (fila+1<=7 y columna-1>=0 y mat[fila+1,columna-1]==" ") o (fila+1<=7 y columna+1<=7 y mat[fila+1,columna+1]==" ") Entonces
 							puedenMoverNegras <- 1
 						FinSi
@@ -3439,17 +3439,17 @@ FinSi
 // Mensaje de fin de juego
 Si Finjuego <> 0 Entonces
 	Si Finjuego == 1 Entonces
-		Escribir '¡Felicitaciones! Las Rojas han ganado.'
+		Escribir 'Â¡Felicitaciones! Las Rojas han ganado.'
 	SiNo
 		si finJuego== 2 Entonces
-			Escribir '¡Felicitaciones! Las Negras han ganado.'
+			Escribir 'Â¡Felicitaciones! Las Negras han ganado.'
 		SiNo
-			Escribir "No hay más movimientos posibles para el jugador ¡Empate!"
+			Escribir "No hay mÃ¡s movimientos posibles para el jugador Â¡Empate!"
 		FinSi
 		
 	FinSi
 FinSi
-FinFunción
+FinFunciÃ³n
 
 //---------------------------------------------------------------------------------
 
@@ -3476,8 +3476,8 @@ Funcion verif <- verificarSiEntero1 (charNum)
 	FinSi
 FinFuncion
 //---------------------------------------------------------------------------------
-// Función para jugar al ahorcado
-Función jugarAhorcado
+// FunciÃ³n para jugar al ahorcado
+FunciÃ³n jugarAhorcado
     Definir x, n, a, error Como Entero
     Definir letra, secreta, vector1, vector2 Como Caracter
     Escribir "Ingresa la palabra"
@@ -3485,9 +3485,9 @@ Función jugarAhorcado
     n = Longitud(secreta)
     Dimension vector1[n], vector2[n]
     
-    // Inicialización de los vectores
+    // InicializaciÃ³n de los vectores
     para x = 0 Hasta n-1 Con Paso 1 Hacer
-        vector1(x) = Subcadena(secreta, x , x )  // Ajustamos el índice correctamente
+        vector1(x) = Subcadena(secreta, x , x )  // Ajustamos el Ã­ndice correctamente
         vector2(x) = "_"
 		Borrar Pantalla
     FinPara
@@ -3648,11 +3648,11 @@ Función jugarAhorcado
 				Escribir "        #"
 				Escribir "        #"
 				Escribir "# # # # # # # # #"
-                Escribir "No te quedan más intentos"
+                Escribir "No te quedan mÃ¡s intentos"
             FinSi
         FinSi
     FinMientras
-Fin Función
+Fin FunciÃ³n
 
 
 
